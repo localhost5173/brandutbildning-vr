@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmr3nd16cffkn"]
+
+[ext_resource type="Script" uid="uid://tfphrmvnu86e" path="res://npc.gd" id="1_twre2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll5ud"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u1jv5"]
+
+[node name="RigidBody3D" type="CharacterBody3D"]
+script = ExtResource("1_twre2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ll5ud")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_u1jv5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
