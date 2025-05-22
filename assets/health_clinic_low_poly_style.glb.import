@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cjdx47y0wqm8v"
-path="res://.godot/imported/health_clinic_low_poly_style.glb-23dcc79e5851796a006f5f5f1434e297.scn"
+path="res://.godot/imported/health_clinic_low_poly_style.glb-f7cee3e2c50517c49a153d0e673131b2.scn"
 
 [deps]
 
-source_file="res://scenes/health_clinic_low_poly_style.glb"
-dest_files=["res://.godot/imported/health_clinic_low_poly_style.glb-23dcc79e5851796a006f5f5f1434e297.scn"]
+source_file="res://assets/health_clinic_low_poly_style.glb"
+dest_files=["res://.godot/imported/health_clinic_low_poly_style.glb-f7cee3e2c50517c49a153d0e673131b2.scn"]
 
 [params]
 
