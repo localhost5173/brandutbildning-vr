@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://d06f3k7btg82o"]
+
+[ext_resource type="Script" uid="uid://benmnfrj74ep7" path="res://scenes/startbutton.gd" id="1_c4rma"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 300.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 75.0
+offset_right = 480.0
+offset_bottom = 225.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Simulation"
+script = ExtResource("1_c4rma")
+
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/Button" to="Control/ColorRect/MarginContainer/VBoxContainer/Button" method="_on_pressed"]

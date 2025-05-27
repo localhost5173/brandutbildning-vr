@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://8ji3wwaq7dyr"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_kmax6"]
+[ext_resource type="PackedScene" uid="uid://d06f3k7btg82o" path="res://scenes/canvas_layer.tscn" id="2_cp7se"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dckw7"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a7ri8"]
+size = Vector3(5, 0.1, 5)
+
+[node name="StartMenu" type="Node3D"]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_kmax6")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 1, -1.32967)
+screen_size = Vector2(640, 300)
+scene = ExtResource("2_cp7se")
+viewport_size = Vector2(640, 300)
+unshaded = true
+scene_properties_keys = PackedStringArray()
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shape = SubResource("BoxShape3D_dckw7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = SubResource("BoxMesh_a7ri8")
+skeleton = NodePath("../..")
