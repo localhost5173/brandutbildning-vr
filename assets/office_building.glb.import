@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bvccalb7sa0g"
-path="res://.godot/imported/office_building.glb-3caad500e2c8219b9ccc3d591fe51aa2.scn"
+path="res://.godot/imported/office_building.glb-cbd0f98c31015bbdc24e0724e7d4aa93.scn"
 
 [deps]
 
-source_file="res://office_building.glb"
-dest_files=["res://.godot/imported/office_building.glb-3caad500e2c8219b9ccc3d591fe51aa2.scn"]
+source_file="res://assets/office_building.glb"
+dest_files=["res://.godot/imported/office_building.glb-cbd0f98c31015bbdc24e0724e7d4aa93.scn"]
 
 [params]
 

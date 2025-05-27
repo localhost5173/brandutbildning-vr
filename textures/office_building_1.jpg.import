@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diqe6k0ah14tr"
-path.s3tc="res://.godot/imported/office_building_2.jpg-33a3f6b5ffc9781b24bba3a3433491f3.s3tc.ctex"
+uid="uid://ooquvp54haw4"
+path.s3tc="res://.godot/imported/office_building_1.jpg-154ea9c41683fefe849dd3f8fd14fa7b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b33013ce1d7412c1b404c2586639a8e2"
+"md5": "bcea21934dac486a438dddffe922bbdc"
 }
 
 [deps]
 
-source_file="res://office_building_2.jpg"
-dest_files=["res://.godot/imported/office_building_2.jpg-33a3f6b5ffc9781b24bba3a3433491f3.s3tc.ctex"]
+source_file="res://textures/office_building_1.jpg"
+dest_files=["res://.godot/imported/office_building_1.jpg-154ea9c41683fefe849dd3f8fd14fa7b.s3tc.ctex"]
 
 [params]
 
