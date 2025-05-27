@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlqixiuiutskx"]
+
+[ext_resource type="Script" path="res://start_menu.gd" id="1_d3352"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yoqr7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_d3352"]
+material = SubResource("StandardMaterial3D_yoqr7")
+
+[sub_resource type="FontFile" id="FontFile_d3352"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufv5y"]
+font_size = 100
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_d3352")
+
+[node name="MenuPlane" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_d3352")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1024, 1024)
+render_target_clear_mode = 2
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 97.0
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_d3352")
+theme_override_font_sizes/font_size = 66
+text = "Start"
+
+[node name="Label" type="Label" parent="SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_right = 67.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Brand Simulation"
+label_settings = SubResource("LabelSettings_ufv5y")
