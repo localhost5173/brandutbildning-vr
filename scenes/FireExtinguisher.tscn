@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmvq2j5nd86w5"]
+
+[ext_resource type="PackedScene" uid="uid://buw47pdtt5wtk" path="res://assets/fire_extinguisher.glb" id="2_gxbn4"]
+
+[sub_resource type="GDScript" id="GDScript_a8y0u"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gxbn4"]
+emission_shape_scale = Vector3(0.05, 0.05, 0.05)
+inherit_velocity_ratio = 2.0
+direction = Vector3(0, 0, -1)
+spread = 5.0
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxbn4"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.548963, 0.548963, 0.548963, 0.396078)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tsorj"]
+material = SubResource("StandardMaterial3D_gxbn4")
+radius = 0.1
+height = 0.2
+
+[node name="XROrigin3D" type="XROrigin3D"]
+
+[node name="XRController3D" type="XRController3D" parent="."]
+tracker = &"right_hand"
+script = SubResource("GDScript_a8y0u")
+
+[node name="FireExtinguisher" type="Node3D" parent="XRController3D"]
+
+[node name="Nozzle" type="Node3D" parent="XRController3D/FireExtinguisher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269908, 0)
+
+[node name="Particles" type="GPUParticles3D" parent="XRController3D/FireExtinguisher/Nozzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0313433)
+emitting = false
+amount = 100
+preprocess = 0.5
+speed_scale = 2.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_gxbn4")
+draw_pass_1 = SubResource("SphereMesh_tsorj")
+
+[node name="Sketchfab_Scene" parent="XRController3D/FireExtinguisher" instance=ExtResource("2_gxbn4")]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947724, 0.319092, 0, -0.319092, 0.947724, 0, 0.450714, 0.851321)
