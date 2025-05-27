@@ -29,11 +29,11 @@ height = 0.6
 script = ExtResource("1_pqck8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1.40663, -0.181074)
 mesh = SubResource("CapsuleMesh_pqck8")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36258, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.816842, -0.16669)
 amount = 30
 lifetime = 0.5
 trail_lifetime = 0.5
@@ -41,10 +41,11 @@ process_material = SubResource("ParticleProcessMaterial_drkjw")
 draw_pass_1 = SubResource("SphereMesh_wmlv8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0866392, 0)
 light_color = Color(0.758524, 0.378209, 1.92523e-06, 1)
 light_energy = 2.0
 omni_range = 1.5
 
 [node name="IgniteTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true

@@ -1,26 +1,25 @@
 extends Node3D
 
-@onready var fire_particles = $GPUParticles3D
-var spread_speed = 0.3
-var intensity_timer = 0.0
-var max_particles = 200  # Maximum flame density
+@onready var fire_vfx: Node3D = $FireVFX  # Make sure this points to your instanced scene
+var max_scale = Vector3(3.0, 4.0, 3.0)
+var start_scale = Vector3(0.001, 0.001, 0.001)
+var current_growth_time = 0.0
+var max_growth_time = 10.0
+var is_burning = false
+
+func _ready():
+	fire_vfx.visible = false
+	fire_vfx.scale = start_scale
 
 func start_burning():
-	fire_particles.emitting = true
-	# Start with minimal fire
-	fire_particles.amount = 20  
-	fire_particles.process_material.emission_box_extents = Vector3(0.3, 0.1, 0.1)
+	print("🔥 Fire started!")
+	fire_vfx.visible = true
+	fire_vfx.scale = start_scale
+	current_growth_time = 0.0
+	is_burning = true
 
 func _process(delta):
-	if fire_particles.emitting:
-		intensity_timer += delta
-		
-		# Gradually increase particle count (first 3 seconds)
-		if intensity_timer < 3.0:
-			fire_particles.amount = lerp(20, max_particles, intensity_timer/3.0)
-		
-		# Expand fire area
-		var extents = fire_particles.process_material.emission_box_extents
-		extents.x = min(extents.x + delta * spread_speed, 1.0)  # Width
-		extents.y = min(extents.y + delta * spread_speed * 2, 2.0)  # Height
-		fire_particles.process_material.emission_box_extents = extents
+	if is_burning and current_growth_time < max_growth_time:
+		current_growth_time += delta
+		var progress = current_growth_time / max_growth_time
+		fire_vfx.scale = start_scale.lerp(max_scale, progress)
