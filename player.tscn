@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dswx1fpig0hti"]
+
+[ext_resource type="PackedScene" uid="uid://d0oyqfxpbnjp4" path="res://curtain.tscn" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dkp5jo6rdkod1" path="res://candle.tscn" id="3_i3pqv"]
+
+[node name="Player" type="Node3D"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(0.87322, 0, 0.487326, -0.252776, 0.854957, 0.452938, -0.416643, -0.518699, 0.746566, 0.790557, 0.529387, 0.869755)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, -5.96046e-08, -8.9407e-08, 1.49012e-08, 1, 1.19209e-07, 0, -5.96046e-08, 1, -0.0673963, 0.227953, 0.720765)
+
+[node name="Curtain" parent="." instance=ExtResource("1_4flbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
+
+[node name="Candle" parent="." instance=ExtResource("3_i3pqv")]

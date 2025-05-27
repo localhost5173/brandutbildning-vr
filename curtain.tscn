@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0oyqfxpbnjp4"]
+
+[ext_resource type="Script" uid="uid://cb4gqijjc002" path="res://curtain.gd" id="1_4kl38"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27ip1"]
+uv1_scale = Vector3(2, 2, 2)
+uv2_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4kl38"]
+material = SubResource("StandardMaterial3D_27ip1")
+
+[sub_resource type="Curve" id="Curve_4kl38"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_27ip1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6udes"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_o5bxk"]
+curve_x = SubResource("Curve_4kl38")
+curve_y = SubResource("Curve_27ip1")
+curve_z = SubResource("Curve_6udes")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4kl38"]
+lifetime_randomness = 0.3
+emission_shape_offset = Vector3(0.5, 0.1, 0)
+emission_shape = 1
+emission_sphere_radius = 2.0
+angle_min = -50.0
+angle_max = 50.0
+initial_velocity_min = -0.5
+initial_velocity_max = 0.1
+gravity = Vector3(0, 0.7, 0)
+scale_curve = SubResource("CurveXYZTexture_o5bxk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kl38"]
+albedo_color = Color(1, 0.413512, 0.0997816, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_27ip1"]
+material = SubResource("StandardMaterial3D_4kl38")
+radius = 0.1
+height = 0.5
+
+[node name="Curtain" type="Node3D"]
+script = ExtResource("1_4kl38")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.3, -1)
+mesh = SubResource("PlaneMesh_4kl38")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.482352, -0.952387)
+emitting = false
+amount = 100
+trail_lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_4kl38")
+draw_pass_1 = SubResource("CapsuleMesh_27ip1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.445004, -0.976723)
+light_color = Color(0.756863, 0.376471, 0, 1)
+light_energy = 5.0
+omni_range = 3.0

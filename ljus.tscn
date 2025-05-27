@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bumkcgbh3n64x"]
+
+[ext_resource type="Script" uid="uid://chk6xoqa108pk" path="res://Candle.gd" id="1_drkjw"]
+[ext_resource type="Script" uid="uid://snprjdpmfpnk" path="res://area_3d.gd" id="2_r1o3a"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r1o3a"]
+radius = 0.05
+height = 0.3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_drkjw"]
+emission_shape = 1
+emission_sphere_radius = 0.05
+gravity = Vector3(0, 0.5, 0)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_drkjw"]
+radius = 0.05
+height = 0.3
+
+[node name="Candle" type="Node3D"]
+script = ExtResource("1_drkjw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+mesh = SubResource("CapsuleMesh_r1o3a")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 30
+lifetime = 0.5
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_drkjw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.758524, 0.378209, 1.92523e-06, 1)
+light_energy = 2.0
+omni_range = 1.5
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_r1o3a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+shape = SubResource("CapsuleShape3D_drkjw")

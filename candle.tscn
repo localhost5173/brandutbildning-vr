@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkp5jo6rdkod1"]
+
+[ext_resource type="Script" uid="uid://chk6xoqa108pk" path="res://Candle.gd" id="1_pqck8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcgl6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pqck8"]
+material = SubResource("StandardMaterial3D_tcgl6")
+radius = 0.3
+height = 2.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_drkjw"]
+emission_shape_scale = Vector3(0.5, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 0.02
+gravity = Vector3(0, 0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqck8"]
+albedo_color = Color(0.867595, 0.268762, 1.34766e-06, 1)
+emission_enabled = true
+emission_energy_multiplier = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_wmlv8"]
+material = SubResource("StandardMaterial3D_pqck8")
+radius = 0.1
+height = 0.6
+
+[node name="Candle" type="Node3D"]
+script = ExtResource("1_pqck8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -1, 0)
+mesh = SubResource("CapsuleMesh_pqck8")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36258, 0)
+amount = 30
+lifetime = 0.5
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_drkjw")
+draw_pass_1 = SubResource("SphereMesh_wmlv8")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.758524, 0.378209, 1.92523e-06, 1)
+light_energy = 2.0
+omni_range = 1.5
+
+[node name="IgniteTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
