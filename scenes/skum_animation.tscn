@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch2alnnahsjti"]
+
+[sub_resource type="Gradient" id="Gradient_8fj6e"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ji46p"]
+gradient = SubResource("Gradient_8fj6e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fky80"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, -10)
+tangential_accel_min = -2.0
+tangential_accel_max = 2.2
+color_ramp = SubResource("GradientTexture1D_ji46p")
+anim_speed_max = 22.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni4ld"]
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.77, 0.673493, 0.6468, 0)
+emission_enabled = true
+emission_energy_multiplier = 14.49
+grow = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_cx4xq"]
+material = SubResource("StandardMaterial3D_ni4ld")
+rings = 64
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Boostanimation" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.00822035, -0.998596, 0.0366339, 0.999966, 0.00820909, -0.000301144, 1.00423e-10, 0.0523359, 0.699041, 0.817553, 0.814364, -1.19291)
+amount = 165
+sub_emitter = NodePath(".")
+explosiveness = 0.03
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_fky80")
+draw_pass_1 = SubResource("SphereMesh_cx4xq")
