@@ -1,40 +1,40 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=6 format=3 uid="uid://6hb7wv7y74ts"]
+[gd_scene load_steps=8 format=3 uid="uid://cmag4p458g7gd"]
 
 [ext_resource type="Script" uid="uid://tfphrmvnu86e" path="res://npc.gd" id="1_twre2"]
+[ext_resource type="PackedScene" uid="uid://beevdyu3aj5ad" path="res://assets/NPC (1).glb" id="2_ll5ud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll5ud"]
+radius = 1.435
+height = 10.346
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twre2"]
+[sub_resource type="Animation" id="Animation_ll5ud"]
+resource_name = "new_animation"
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ll5ud"]
-material = SubResource("StandardMaterial3D_twre2")
-radius = 3.15
-height = 10.26
+[sub_resource type="Animation" id="Animation_u1jv5"]
+length = 0.001
 
-=======
-[gd_scene load_steps=4 format=3 uid="uid://6hb7wv7y74ts"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tciug"]
+_data = {
+&"RESET": SubResource("Animation_u1jv5"),
+&"new_animation": SubResource("Animation_ll5ud")
+}
 
-[ext_resource type="Script" path="res://npc.gd" id="1_twre2"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll5ud"]
-
->>>>>>> Stashed changes
 [sub_resource type="SphereShape3D" id="SphereShape3D_u1jv5"]
 
 [node name="RigidBody3D" type="CharacterBody3D"]
 script = ExtResource("1_twre2")
+walk_speed = 3.0
+
+[node name="NPC (1)" parent="." instance=ExtResource("2_ll5ud")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89839, 0)
 shape = SubResource("CapsuleShape3D_ll5ud")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-<<<<<<< Updated upstream
-mesh = SubResource("CapsuleMesh_ll5ud")
-=======
->>>>>>> Stashed changes
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tciug")
+}
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -44,3 +44,5 @@ shape = SubResource("SphereShape3D_u1jv5")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="NPC (1)"]
