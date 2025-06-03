@@ -320,6 +320,7 @@ func _input(event):
 
 # Process event
 func _process(delta):
+
 	# Process screen refreshing
 	if Engine.is_editor_hint():
 		# Perform periodic material refreshes to handle the user modifying the
