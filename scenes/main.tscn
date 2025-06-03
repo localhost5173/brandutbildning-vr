@@ -1,11 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://bibik3ob14b5h"]
+[gd_scene load_steps=31 format=3 uid="uid://bibik3ob14b5h"]
 
-[ext_resource type="Script" uid="uid://c5w031um8aepb" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://c5w031um8aepb" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="2_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="5_eb6dy"]
-[ext_resource type="Script" uid="uid://coarfit0h8uqp" path="res://scenes/right_hand.gd" id="5_jkv2x"]
+[ext_resource type="Script" uid="uid://coarfit0h8uqp" path="res://scripts/right_hand.gd" id="5_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://be0psmdbsae48" path="res://sfx/Fire Extinguisher SOUND Effect.mp3" id="6_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_trceg"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="7_a8y0u"]
 [ext_resource type="Script" uid="uid://byit6r5ekjwag" path="res://addons/godot-xr-tools/objects/pickable.gd" id="8_a8y0u"]
@@ -116,6 +117,7 @@ strafe = true
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
 script = ExtResource("5_jkv2x")
+click_sound = ExtResource("6_jkv2x")
 
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("5_eb6dy")]
 
@@ -124,6 +126,9 @@ turn_mode = 1
 step_turn_angle = 45.0
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" instance=ExtResource("4_ya4ey")]
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="XROrigin3D/RightHand"]
+stream = ExtResource("6_jkv2x")
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("7_a8y0u")]
 player_height_max = 1.0

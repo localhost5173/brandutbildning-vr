@@ -1,0 +1,104 @@
+[gd_scene load_steps=17 format=3 uid="uid://dbik2q32rs587"]
+
+[ext_resource type="Script" uid="uid://c5w031um8aepb" path="res://scripts/main.gd" id="1_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="2_0o4t1"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_0k4wn"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_glbon"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_j5v2v"]
+[ext_resource type="PackedScene" uid="uid://dyagadc1w3x3n" path="res://ui/main_ui.tscn" id="4_jix8l"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_iotk1"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_w44g7"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_cm266"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_g8g3n"]
+[ext_resource type="Script" uid="uid://v3kenndrexa4" path="res://scripts/menu_spawn.gd" id="9_0k4wn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jix8l"]
+data = PackedVector3Array(-30, 0.5, 30, 30, 0.5, 30, -30, -0.5, 30, 30, 0.5, 30, 30, -0.5, 30, -30, -0.5, 30, 30, 0.5, -30, -30, 0.5, -30, 30, -0.5, -30, -30, 0.5, -30, -30, -0.5, -30, 30, -0.5, -30, 30, 0.5, 30, 30, 0.5, -30, 30, -0.5, 30, 30, 0.5, -30, 30, -0.5, -30, 30, -0.5, 30, -30, 0.5, -30, -30, 0.5, 30, -30, -0.5, -30, -30, 0.5, 30, -30, -0.5, 30, -30, -0.5, -30, 30, 0.5, 30, -30, 0.5, 30, 30, 0.5, -30, -30, 0.5, 30, -30, 0.5, -30, 30, 0.5, -30, -30, -0.5, 30, 30, -0.5, 30, -30, -0.5, -30, 30, -0.5, 30, 30, -0.5, -30, -30, -0.5, -30)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_fu7sn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jyhfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93248, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71386, 0)
+visible = false
+mesh = SubResource("BoxMesh_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71386, 0)
+shape = SubResource("ConcavePolygonShape3D_jix8l")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.253771, 0)
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("2_0o4t1")]
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" instance=ExtResource("3_0k4wn")]
+strafe = true
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" instance=ExtResource("4_j5v2v")]
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand" instance=ExtResource("5_iotk1")]
+show_laser = 2
+laser_length = 1
+show_target = true
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("6_w44g7")]
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("7_cm266")]
+turn_mode = 1
+step_turn_angle = 45.0
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" instance=ExtResource("4_j5v2v")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("5_iotk1")]
+show_laser = 2
+laser_length = 1
+show_target = true
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_g8g3n")]
+player_height_max = 1.0
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("xr_camera")]
+script = ExtResource("9_0k4wn")
+xr_camera = NodePath("../XROrigin3D/XRCamera3D")
+menu_distance = 0.0
+
+[node name="Viewport2Din3D" parent="Node3D" instance=ExtResource("3_glbon")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.787105, -1.41973)
+screen_size = Vector2(1280, 720)
+scene = ExtResource("4_jix8l")
+viewport_size = Vector2(1280, 720)
+scene_properties_keys = PackedStringArray()
