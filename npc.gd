@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $Area3D
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var mesh: Node3D = $"NPC (1)" # Adjust to your actual mesh path
 
 @export var walk_speed := 1.5
 @export var run_speed := 6.0
@@ -24,13 +26,14 @@ func _physics_process(delta):
 		if panic_timer <= 0:
 			is_panicking = false
 			_set_random_target()
-
 		_move_panic(delta)
+		anim_player.play("run")
 	else:
 		if nav_agent.is_navigation_finished():
 			_set_random_target()
 		else:
 			_move_path(delta)
+			anim_player.play("walk")
 
 func _set_random_target():
 	var random_pos = global_position + Vector3(
@@ -45,7 +48,7 @@ func _move_path(delta):
 	var direction = (next_point - global_position).normalized()
 	current_velocity = direction * walk_speed
 	velocity = current_velocity
-	move_and_slide()
+	_move_and_face()
 
 func _move_panic(delta):
 	var random_dir = Vector3(
@@ -55,12 +58,19 @@ func _move_panic(delta):
 	).normalized()
 	current_velocity = random_dir * run_speed
 	velocity = current_velocity
+	_move_and_face()
+
+func _move_and_face():
 	move_and_slide()
+	if current_velocity.length() > 0.01:
+		var look_dir = current_velocity.normalized()
+		mesh.look_at(global_position + look_dir, Vector3.UP)
+		mesh.rotate_y(deg_to_rad(180)) # Face forward if mesh looks backward by default
 
 func trigger_panic():
 	is_panicking = true
 	panic_timer = panic_time
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name.contains("Fire"):  # Use groups ideally
+	if body.name.contains("Fire"):
 		trigger_panic()
