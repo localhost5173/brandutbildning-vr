@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=3 uid="uid://6hb7wv7y74ts"]
 
 [ext_resource type="Script" uid="uid://tfphrmvnu86e" path="res://npc.gd" id="1_twre2"]
@@ -11,6 +12,14 @@ material = SubResource("StandardMaterial3D_twre2")
 radius = 3.15
 height = 10.26
 
+=======
+[gd_scene load_steps=4 format=3 uid="uid://6hb7wv7y74ts"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_twre2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ll5ud"]
+
+>>>>>>> Stashed changes
 [sub_resource type="SphereShape3D" id="SphereShape3D_u1jv5"]
 
 [node name="RigidBody3D" type="CharacterBody3D"]
@@ -20,7 +29,10 @@ script = ExtResource("1_twre2")
 shape = SubResource("CapsuleShape3D_ll5ud")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+<<<<<<< Updated upstream
 mesh = SubResource("CapsuleMesh_ll5ud")
+=======
+>>>>>>> Stashed changes
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
