@@ -40,11 +40,11 @@ func _process(_delta):
 			is_emitting = false
 			click_sound_player.stop()
 
-func _on_object_picked_up() -> void:
+func _on_object_picked_up(pickable: Variant) -> void:
 	is_held = true
 	print("Picked up: emitting enabled")
 
-func _on_object_put_down() -> void:
+func _on_object_put_down(pickable: Variant) -> void:
 	is_held = false
 	print("Put down: emitting disabled")
 	if is_emitting:
