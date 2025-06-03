@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bvccalb7sa0g" path="res://office_building.glb" id="1_o5qli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
-size = Vector3(281.668, 1, 102.736)
+size = Vector3(256.293, 0.001, 237.962)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
 size = Vector3(60, 1, 60)
@@ -13,11 +13,39 @@ size = Vector3(60, 1, 60)
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.0452, 0, 17.8219)
+transform = Transform3D(1.24728, 0, 0, 0, 1.05615, 0, 0, 0, 0.371817, 36.7495, -1.51925, 17.2214)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.24728, 0, 0, 0, 1.05615, 0, 0, 0, 0.371817, 39.0403, 17.9374, 17.0211)
 shape = SubResource("BoxShape3D_sgp6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_o5qli")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.23784, 0, 0, 0, 1.04815, 0, 0, 0, 0.369001, 43.1246, 36.7235, 15.441)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.17618, 0, -0.00979514, 0, 1.04815, 0, 0.0441419, 0, 0.371395, 37.4235, 56.3785, 15.8394)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="Wall" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4.80567e-08, 1.1213, 0.00851488, 0.804524, -3.58671e-08, 6.40868e-15, 1.80355e-09, 0.042081, -0.322861, 184.002, 25.6809, 12.3731)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="Wall2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4.80567e-08, 1.11658, 0.00970905, 0.804523, -3.57161e-08, 7.30747e-15, 1.80355e-09, 0.0419039, -0.368141, -89.3777, 19.7245, 9.37)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="Wall3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.11483, 0.00218194, -1.72134e-10, 0, -2.01865e-08, -0.833478, -0.0045957, 0.753183, -5.94186e-08, 40.9094, 27.8895, 53.898)
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="Wall4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.11483, 0.00218194, -1.72133e-10, 0, -2.01864e-08, -0.833473, -0.00459572, 0.753183, -5.94186e-08, 45.1472, 25.9416, -24.4452)
+shape = SubResource("BoxShape3D_sgp6g")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.556, 129.502, -25.7196)
