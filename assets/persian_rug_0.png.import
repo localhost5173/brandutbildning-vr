@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b7ygc40v2exeo"
+path.s3tc="res://.godot/imported/persian_rug_0.png-19220b31def3ff467104564a6ca4b731.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "9b50176eef5cb3f6ead431c47cf48839"
+}
+
+[deps]
+
+source_file="res://assets/persian_rug_0.png"
+dest_files=["res://.godot/imported/persian_rug_0.png-19220b31def3ff467104564a6ca4b731.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
