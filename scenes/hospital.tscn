@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7adfbvkmp2ui"]
+[gd_scene load_steps=3 format=3 uid="uid://bhrcsyou4uvpi"]
 
-[ext_resource type="PackedScene" uid="uid://cjdx47y0wqm8v" path="res://health_clinic_low_poly_style.glb" id="1_q6ha6"]
+[ext_resource type="PackedScene" uid="uid://cjdx47y0wqm8v" path="res://scenes/health_clinic_low_poly_style.glb" id="1_q6ha6"]
+[ext_resource type="PackedScene" uid="uid://buw47pdtt5wtk" path="res://scenes/fire_extinguisher.glb" id="2_ysjay"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_q6ha6")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="Node3D" type="Node3D" parent="." index="1"]
+
+[node name="Sketchfab_Scene" parent="." index="2" instance=ExtResource("2_ysjay")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -31.4701, 0, 106.237)

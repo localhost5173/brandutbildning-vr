@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://n3cv2e6day8h"]
+[gd_scene load_steps=3 format=3 uid="uid://bkkcesrets48k"]
 
-[ext_resource type="PackedScene" uid="uid://buw47pdtt5wtk" path="res://fire_extinguisher.glb" id="1_ph43p"]
-[ext_resource type="PackedScene" uid="uid://ch2alnnahsjti" path="res://skum_animation.tscn" id="2_ps3p8"]
+[ext_resource type="PackedScene" uid="uid://buw47pdtt5wtk" path="res://scenes/fire_extinguisher.glb" id="1_ph43p"]
+[ext_resource type="PackedScene" uid="uid://ch2alnnahsjti" path="res://scenes/skum_animation.tscn" id="2_3b6no"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_ph43p")]
 transform = Transform3D(1.26925, 0, 3.46484, 0, 3.69, 0, -3.46484, 0, 1.26925, 0.72, 0, 0)
 
-[node name="Node3D" parent="." index="1" instance=ExtResource("2_ps3p8")]
-transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.085, 0.032, 0.215)
+[node name="Node3D2" parent="." index="1" instance=ExtResource("2_3b6no")]
+transform = Transform3D(0.0932168, 0, -0.254466, 0, 0.271003, 0, 0.254466, 0, 0.0932168, -0.0671161, 0, -0.183216)

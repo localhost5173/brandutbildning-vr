@@ -22,12 +22,13 @@ anim_speed_max = 22.3
 blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.403922, 0.0784314, 0.505882)
+albedo_color = Color(0.0228065, 0.0207517, 0.022464, 0.403922)
 
 [sub_resource type="SphereMesh" id="SphereMesh_tgy6w"]
 material = SubResource("StandardMaterial3D_oouk6")
 radius = 4.6
-height = 4.681
+height = 9.944
+radial_segments = 32
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(9.305, 0, 0, 0, 9.305, 0, 0, 0, 9.305, 0, 0, 0)
