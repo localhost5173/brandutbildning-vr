@@ -1,0 +1,333 @@
+[gd_scene load_steps=2 format=3 uid="uid://du7tgjnep3k70"]
+
+[ext_resource type="Script" uid="uid://c6gskaeqqrw6w" path="res://scenes/canvas_settings.gd" id="1_del6d"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 300.0
+script = ExtResource("1_del6d")
+
+[node name="SimulationsLayer" type="CanvasLayer" parent="."]
+layer = 0
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SimulationsLayer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="SimulationsLayer/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 100.0
+offset_right = 480.0
+offset_bottom = 201.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SimulationsLayer/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Brandsläckare" type="Button" parent="SimulationsLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Brandsläckare"
+
+[node name="Utrymmning" type="Button" parent="SimulationsLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Utrymmning"
+
+[node name="Brandfilt" type="Button" parent="SimulationsLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Brandfilt"
+
+[node name="MarginContainer2" type="MarginContainer" parent="SimulationsLayer/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 44.0
+
+[node name="BackButton2" type="Button" parent="SimulationsLayer/ColorRect/MarginContainer2"]
+layout_mode = 2
+text = "Tillbaka"
+
+[node name="StartLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="StartLayer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="StartLayer/ColorRect"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 100.0
+offset_right = 480.0
+offset_bottom = 250.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartLayer/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="TestButton" type="Button" parent="StartLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "To test area"
+
+[node name="SettingsButton" type="Button" parent="StartLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inställningar"
+
+[node name="SimButton" type="Button" parent="StartLayer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Simuleringar"
+
+[node name="SettingsLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SettingsLayer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="Sliders" type="MarginContainer" parent="SettingsLayer/ColorRect"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 200.0
+offset_top = 130.0
+offset_right = 500.0
+offset_bottom = 193.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsLayer/ColorRect/Sliders"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="SettingsLayer/ColorRect/Sliders/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsLayer/ColorRect/Sliders/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider2" type="HSlider" parent="SettingsLayer/ColorRect/Sliders/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeText" type="MarginContainer" parent="SettingsLayer/ColorRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 123.0
+offset_right = 173.0
+offset_bottom = 153.0
+
+[node name="Label" type="Label" parent="SettingsLayer/ColorRect/VolumeText"]
+layout_mode = 2
+text = "Volym:"
+
+[node name="SFXText" type="MarginContainer" parent="SettingsLayer/ColorRect"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 173.0
+offset_right = 172.0
+offset_bottom = 196.0
+
+[node name="Label" type="Label" parent="SettingsLayer/ColorRect/SFXText"]
+layout_mode = 2
+text = "SFX:"
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsLayer/ColorRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 348.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="SettingsLayer/ColorRect/MarginContainer"]
+layout_mode = 2
+text = "Inställningar"
+
+[node name="BackButton1" type="Button" parent="SettingsLayer"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 35.0
+text = "Tillbaka"
+
+[node name="Sim1Layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Sim1Layer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="Sim1Layer/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 44.0
+
+[node name="BackButton3" type="Button" parent="Sim1Layer/ColorRect/MarginContainer"]
+layout_mode = 2
+text = "Tillbaka"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Sim1Layer/ColorRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 367.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sim1Layer/ColorRect/MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Sim1Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Beskrivning:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Sim1Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Ditt job är att..."
+
+[node name="MarginContainer3" type="MarginContainer" parent="Sim1Layer/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -44.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="StartSim1" type="Button" parent="Sim1Layer/ColorRect/MarginContainer3"]
+layout_mode = 2
+text = "Starta Simulering"
+
+[node name="Sim2Layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Sim2Layer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="Sim2Layer/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 44.0
+
+[node name="BackButton4" type="Button" parent="Sim2Layer/ColorRect/MarginContainer"]
+layout_mode = 2
+text = "Tillbaka"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Sim2Layer/ColorRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 367.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sim2Layer/ColorRect/MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Sim2Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Beskrivning:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Sim2Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Ditt job är att..."
+
+[node name="MarginContainer3" type="MarginContainer" parent="Sim2Layer/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -44.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="StartSim2" type="Button" parent="Sim2Layer/ColorRect/MarginContainer3"]
+layout_mode = 2
+text = "Starta Simulering"
+
+[node name="Sim3Layer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Sim3Layer"]
+offset_right = 640.0
+offset_bottom = 300.0
+color = Color(0.176471, 0.592157, 0.686275, 0.662745)
+
+[node name="MarginContainer" type="MarginContainer" parent="Sim3Layer/ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 73.0
+offset_bottom = 44.0
+
+[node name="BackButton5" type="Button" parent="Sim3Layer/ColorRect/MarginContainer"]
+layout_mode = 2
+text = "Tillbaka"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Sim3Layer/ColorRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 367.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sim3Layer/ColorRect/MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Sim3Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Beskrivning:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Sim3Layer/ColorRect/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Ditt job är att..."
+
+[node name="MarginContainer3" type="MarginContainer" parent="Sim3Layer/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -44.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="StartSim3" type="Button" parent="Sim3Layer/ColorRect/MarginContainer3"]
+layout_mode = 2
+text = "Starta Simulering"
+
+[connection signal="pressed" from="SimulationsLayer/ColorRect/MarginContainer2/BackButton2" to="." method="_on_back_button_2_pressed"]
+[connection signal="pressed" from="StartLayer/ColorRect/MarginContainer/VBoxContainer/TestButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="StartLayer/ColorRect/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="StartLayer/ColorRect/MarginContainer/VBoxContainer/SimButton" to="." method="_on_sim_button_pressed"]
+[connection signal="pressed" from="SettingsLayer/BackButton1" to="." method="_on_back_button_1_pressed"]
+[connection signal="pressed" from="Sim1Layer/ColorRect/MarginContainer/BackButton3" to="." method="_on_back_button_3_pressed"]
+[connection signal="pressed" from="Sim1Layer/ColorRect/MarginContainer3/StartSim1" to="." method="_on_start_sim_1_pressed"]
+[connection signal="pressed" from="Sim2Layer/ColorRect/MarginContainer/BackButton4" to="." method="_on_back_button_4_pressed"]
+[connection signal="pressed" from="Sim2Layer/ColorRect/MarginContainer3/StartSim2" to="." method="_on_start_sim_2_pressed"]
+[connection signal="pressed" from="Sim3Layer/ColorRect/MarginContainer/BackButton5" to="." method="_on_back_button_5_pressed"]
+[connection signal="pressed" from="Sim3Layer/ColorRect/MarginContainer3/StartSim3" to="." method="_on_start_sim_3_pressed"]

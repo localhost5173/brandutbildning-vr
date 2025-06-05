@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8ji3wwaq7dyr"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_kmax6"]
-[ext_resource type="PackedScene" uid="uid://d06f3k7btg82o" path="res://scenes/canvas_layer.tscn" id="2_cp7se"]
+[ext_resource type="PackedScene" uid="uid://du7tgjnep3k70" path="res://scenes/simulation_canvas.tscn" id="2_kmax6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dckw7"]
 size = Vector3(5, 0.1, 5)
@@ -14,10 +14,10 @@ size = Vector3(5, 0.1, 5)
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_kmax6")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 1, -1.32967)
 screen_size = Vector2(640, 300)
-scene = ExtResource("2_cp7se")
+scene = ExtResource("2_kmax6")
 viewport_size = Vector2(640, 300)
 unshaded = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("canvas_settings.gd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
