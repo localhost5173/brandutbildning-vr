@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="brandutbildning-vr"
-run/main_scene="uid://dbik2q32rs587"
+run/main_scene="uid://bibik3ob14b5h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
