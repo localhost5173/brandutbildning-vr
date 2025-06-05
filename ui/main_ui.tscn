@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyagadc1w3x3n"]
+
+[ext_resource type="Texture2D" uid="uid://6sbotbsfrug3" path="res://shaders/image.png" id="1_v5qxn"]
+[ext_resource type="Script" uid="uid://c0nb7trmol70t" path="res://ui/button.gd" id="2_3lvfr"]
+[ext_resource type="AudioStream" uid="uid://cxgjy2302v5yr" path="res://sfx/Hover_over_button_sound_effect.mp3" id="3_x3h8h"]
+[ext_resource type="AudioStream" uid="uid://byqt3jbf52lrp" path="res://sfx/click_soundeffect.wav" id="4_qry5k"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -366.5
+offset_right = 640.0
+offset_bottom = 366.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v5qxn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -59.5
+offset_right = 99.0
+offset_bottom = 59.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 81
+text = "Start"
+script = ExtResource("2_3lvfr")
+hover_sound = ExtResource("3_x3h8h")
+click_sound = ExtResource("4_qry5k")
+
+[connection signal="pressed" from="Control/TextureRect/MarginContainer/VBoxContainer/Button" to="Control/TextureRect/MarginContainer/VBoxContainer/Button" method="_on_pressed"]
