@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d06f3k7btg82o"]
 
-[ext_resource type="Script" uid="uid://benmnfrj74ep7" path="res://scenes/startbutton.gd" id="1_c4rma"]
+[ext_resource type="Script" uid="uid://benmnfrj74ep7" path="res://scripts/startbutton.gd" id="1_c4rma"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
