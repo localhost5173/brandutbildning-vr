@@ -63,6 +63,6 @@ func _on_spray_area_body_entered(body: Node3D) -> void:
 		# Optional: fade out or play animation here before removing
 
 
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(0.5).timeout
 		if parent and parent.is_inside_tree():
 			parent.queue_free()
