@@ -46,4 +46,4 @@ func _on_pressed():
 	if audio_player.playing:
 		await audio_player.finished
 	# Byta scen
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/oldmain.tscn")

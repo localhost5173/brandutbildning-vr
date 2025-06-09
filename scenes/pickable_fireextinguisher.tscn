@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://buw47pdtt5wtk" path="res://assets/fire_extinguisher.glb" id="2_4mo0s"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_8jj48"]
 [ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="4_3304o"]
-[ext_resource type="Script" uid="uid://cvm6eshjwkkga" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_awkjp"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_awkjp"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_6xmp4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qawwp"]
