@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0oyqfxpbnjp4"]
+[gd_scene load_steps=5 format=3 uid="uid://d0oyqfxpbnjp4"]
 
 [ext_resource type="Script" uid="uid://cb4gqijjc002" path="res://curtain.gd" id="1_4kl38"]
 [ext_resource type="ArrayMesh" uid="uid://bfa7acvdwcq0g" path="res://assets/PK01_2_OBJ_CurtainLT1_Hg_v1.0.0/OM04_1_CurtainsLongT1_v1.obj" id="2_6udes"]
 [ext_resource type="PackedScene" uid="uid://bdk54ko7nop8p" path="res://scenes/vfx_fire.tscn" id="2_27ip1"]
+[ext_resource type="AudioStream" uid="uid://d4jofqak3su6h" path="res://sounds/Burning Fire with sound effects free to use  no copyright.mp3" id="4_o5bxk"]
 
 [node name="Curtain" type="Node3D"]
 script = ExtResource("1_4kl38")
@@ -17,3 +18,7 @@ visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.858257, 0.413552, 3.85046e-07, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o5bxk")
+volume_db = 3.748
