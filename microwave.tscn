@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdhmy6b7y713"]
+
+[ext_resource type="Script" uid="uid://blxh05oav3bwt" path="res://microwave.gd" id="1_8u6tr"]
+[ext_resource type="PackedScene" uid="uid://cxvy1e8iovq46" path="res://assets/microwave_oven.glb" id="1_wg22k"]
+[ext_resource type="AudioStream" uid="uid://btqlps0dq4r1c" path="res://sounds/Microwave Sound Effect.mp3" id="2_jrn6y"]
+[ext_resource type="PackedScene" uid="uid://bdk54ko7nop8p" path="res://scenes/vfx_fire.tscn" id="3_jrn6y"]
+[ext_resource type="AudioStream" uid="uid://dqr3fra6t0obo" path="res://sounds/Explosion sound effect - bomb sound - boom sound.mp3" id="5_ekmee"]
+[ext_resource type="AudioStream" uid="uid://d4jofqak3su6h" path="res://sounds/Burning Fire with sound effects free to use  no copyright.mp3" id="6_vd5u7"]
+
+[node name="Microwave" type="Node3D"]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+script = ExtResource("1_8u6tr")
+
+[node name="microwaveasset" parent="." instance=ExtResource("1_wg22k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.685, -120.539, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="microwaveasset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -182.918, 120.585, 0)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="FireVFX" parent="." instance=ExtResource("3_jrn6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.932, 40, 13.319)
+visible = false
+
+[node name="AudioStreamPlayer3D_Heating" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.418, 19.7592, 0)
+stream = ExtResource("2_jrn6y")
+volume_db = 80.0
+
+[node name="AudioStreamPlayer3D_Explosion" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.418, 19.759, 0)
+stream = ExtResource("5_ekmee")
+volume_db = 80.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(34.9962, -11.7301, 33.7294, -8.30745, 43.2559, 23.6626, -34.7311, -22.1661, 28.3269, 75.0702, 84.8407, 71.5396)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.989984, 0, 0.141178, -0.0538123, 0.924506, 0.37735, -0.13052, -0.381167, 0.915247, 29.7505, 69.4993, 127.486)
+light_color = Color(0.967198, 0.553038, 3.85046e-07, 1)
+
+[node name="AudioStreamPlayer3D_Fire" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_vd5u7")
+volume_db = 80.0
