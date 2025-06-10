@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=22 format=3 uid="uid://bibik3ob14b5h"]
 
 [ext_resource type="PackedScene" uid="uid://bvccalb7sa0g" path="res://office_building.glb" id="1_o5qli"]
@@ -15,6 +16,14 @@
 [ext_resource type="PackedScene" uid="uid://b5408h4r5t8h7" path="res://scenes/exit_sign_ceiling.glb" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://6yymr47n83he" path="res://scenes/exit_sign_-_free_background_prop.glb" id="14_a8y0u"]
 [ext_resource type="PackedScene" path="res://assets/View/smokeanimation (2).tscn" id="15_jkv2x"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://bibik3ob14b5h"]
+
+[ext_resource type="PackedScene" uid="uid://bvccalb7sa0g" path="res://office_building.glb" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://clcgpihtugayi" path="res://elevator_scp_sl.glb" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bm7pyry2wfwua" path="res://exit_sign_-_free_background_prop.glb" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://kkfp5hq5dsqq" path="res://exit_sign_ceiling.glb" id="4_jyhfs"]
+>>>>>>> dd9ad80b06b7a03a5c90eb21583f56f7a87cfbaf
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
 size = Vector3(256.293, 0.001, 237.962)
@@ -101,6 +110,7 @@ material_override = SubResource("StandardMaterial3D_trceg")
 mesh = SubResource("PlaneMesh_a8y0u")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_o5qli")]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6459, 129.502, -25.5505)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1270,3 +1280,102 @@ transform = Transform3D(9.305, 0, 0, 0, 9.305, 0, 0, 0, 9.305, -90.6522, 22.0021
 
 [node name="Node3D131" parent="." instance=ExtResource("15_jkv2x")]
 transform = Transform3D(9.305, 0, 0, 0, 9.305, 0, 0, 0, 9.305, -90.6522, 22.0021, 20.3086)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8928, 129.364, -27.2304)
+
+[node name="LeftElevatorlvl_1" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -1.50996e-07, 0, 5, 0, 1.23817e-06, 0, -1, 166.576, 2.23418, 17.3283)
+
+[node name="RightElevatorlvl_2" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -4.52987e-07, 0, 5, 0, 1.23817e-06, 0, -3, -79.6056, 1.74008, 25.4487)
+
+[node name="LeftElevatorlvl_3" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -8.74228e-08, 0, 5, 0, 7.16867e-07, 0, -1, 166.605, 18.9701, 17.3168)
+
+[node name="RightElevatorlvl_4" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -4.52987e-07, 0, 5, 0, 1.23817e-06, 0, -3, -79.1102, 18.9701, 25.0433)
+
+[node name="LeftElevatorlvl_5" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -8.74228e-08, 0, 5, 0, 7.16867e-07, 0, -1, 166.605, 54.7003, 17.3168)
+
+[node name="RightElevatorlvl_6" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -4.52987e-07, 0, 5, 0, 1.23817e-06, 0, -3, -77.4474, 54.7003, 25.6021)
+
+[node name="LeftElevatorlvl_7" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -8.74228e-08, 0, 5, 0, 7.16867e-07, 0, -1, 166.53, 72.2274, 17.3089)
+
+[node name="RightElevatorlvl_8" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(-8.2, 0, -4.52987e-07, 0, 5, 0, 1.23817e-06, 0, -3, -78.1875, 72.3297, 26.3665)
+
+[node name="Exit0" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, 166.936, 13.6343, 14.9069)
+
+[node name="Exit1" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, 166.936, 30.1271, 14.5096)
+
+[node name="Exit2" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, -78.876, 30.1271, 18.271)
+
+[node name="Exit3" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, 166.936, 65.9217, 14.5096)
+
+[node name="Exit4" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, -77.4742, 65.8671, 18.7537)
+
+[node name="Exit5" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, 166.936, 84.0858, 14.5096)
+
+[node name="Exit6" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, -77.9722, 83.7967, 19.6342)
+
+[node name="Exit(-1)" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.55, 0, 1, 0, -4.37114e-08, -79.7999, 12.7324, 18.7522)
+
+[node name="Exit_ceiling1" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 146.853, 16.2313, -20.1522)
+
+[node name="Exit_ceiling2" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 88.5939, 16.2313, -28.0284)
+
+[node name="Exit_ceiling3" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 47.9907, 16.2313, -27.1697)
+
+[node name="Exit_ceiling4" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -43.2404, 16.2313, -22.8454)
+
+[node name="Exit_ceiling5" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 146.853, 33.9479, -20.1522)
+
+[node name="Exit_ceiling6" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 88.5939, 33.9479, -28.0284)
+
+[node name="Exit_ceiling7" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 47.9907, 33.9479, -27.1697)
+
+[node name="Exit_ceiling8" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -43.2404, 33.9479, -22.8454)
+
+[node name="Exit_ceiling9" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 146.853, 69.4647, -20.1522)
+
+[node name="Exit_ceiling10" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 88.5939, 69.4647, -28.0284)
+
+[node name="Exit_ceiling11" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 47.9907, 69.4647, -27.1697)
+
+[node name="Exit_ceiling12" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -43.2404, 69.4647, -22.8454)
+
+[node name="Exit_ceiling13" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 146.853, 87.1384, -20.1522)
+
+[node name="Exit_ceiling14" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 88.5939, 87.1384, -28.0284)
+
+[node name="Exit_ceiling15" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 47.9907, 87.1384, -27.1697)
+
+[node name="Exit_ceiling16" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -43.2404, 87.0171, -22.0876)
+>>>>>>> dd9ad80b06b7a03a5c90eb21583f56f7a87cfbaf
