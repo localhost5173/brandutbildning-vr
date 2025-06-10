@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bu4akneelm4gd"
+path.s3tc="res://.godot/imported/modern__kitchen__cabinets_0.png-7665cb95bd2b5cebb0b7c282a9edf675.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "42adaddb2e042fc4678d96dc12757e7b"
+}
+
+[deps]
+
+source_file="res://assets/Level-1-Cafeteria/modern__kitchen__cabinets_0.png"
+dest_files=["res://.godot/imported/modern__kitchen__cabinets_0.png-7665cb95bd2b5cebb0b7c282a9edf675.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
